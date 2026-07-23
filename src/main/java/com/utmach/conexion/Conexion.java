@@ -21,7 +21,7 @@ public class Conexion {
 
             String host =
                     System.getenv("MYSQLHOST");
-
+            String puerto = System.getenv("MYSQLPORT");
             String bd =
                     System.getenv("MYSQLDATABASE");
 
@@ -32,11 +32,7 @@ public class Conexion {
                     System.getenv("MYSQLPASSWORD");
 
             String url =
-                    "jdbc:mysql://" +
-                    host +
-                    ":3306/" +
-                    bd +
-                    "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+                    "jdbc:mysql://" + host + ":"+ puerto + "/"+ bd +"?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
 
             con = DriverManager.getConnection(
                     url,
