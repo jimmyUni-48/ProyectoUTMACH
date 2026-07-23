@@ -261,11 +261,12 @@ Visualización general de la actividad del sistema.
 
 </p>
 
-<button class="btn btn-secondary" disabled>
+<a href="estadisticas.jsp"
+class="btn btn-info">
 
-Próximamente
+Ver Estadísticas
 
-</button>
+</a>
 
 </div>
 
