@@ -33,7 +33,68 @@ body{
 }
 
 </style>
+<script>
 
+function actualizarCarreras(){
+
+let facultad =
+document.getElementById("facultad").value;
+
+let carrera =
+document.getElementById("carrera");
+
+carrera.innerHTML =
+"<option value=''>Seleccione una carrera</option>";
+
+if(facultad === "ingenieria"){
+
+carrera.innerHTML +=
+"<option value='Tecnologías de la Información'>Tecnologías de la Información</option>";
+
+carrera.innerHTML +=
+"<option value='Ingeniería Civil'>Ingeniería Civil</option>";
+
+carrera.innerHTML +=
+"<option value='Ingeniería Ambiental'>Ingeniería Ambiental</option>";
+
+}
+
+if(facultad === "empresariales"){
+
+carrera.innerHTML +=
+"<option value='Administración de Empresas'>Administración de Empresas</option>";
+
+carrera.innerHTML +=
+"<option value='Contabilidad y Auditoría'>Contabilidad y Auditoría</option>";
+
+carrera.innerHTML +=
+"<option value='Economía'>Economía</option>";
+
+}
+
+if(facultad === "sociales"){
+
+carrera.innerHTML +=
+"<option value='Derecho'>Derecho</option>";
+
+carrera.innerHTML +=
+"<option value='Comunicación'>Comunicación</option>";
+
+}
+
+if(facultad === "agropecuarias"){
+
+carrera.innerHTML +=
+"<option value='Agronomía'>Agronomía</option>";
+
+carrera.innerHTML +=
+"<option value='Medicina Veterinaria'>Medicina Veterinaria</option>";
+
+}
+
+}
+
+</script>
 </head>
 
 <body>
@@ -54,13 +115,84 @@ body{
 </div>
 
 <div class="mb-3">
-<label class="form-label">Carrera</label>
-<input type="text" name="carrera" class="form-control" required>
+
+<label class="form-label">
+
+Facultad
+
+</label>
+
+<select id="facultad"
+        class="form-select"
+        onchange="actualizarCarreras()"
+        required>
+
+<option value="">
+Seleccione una facultad
+</option>
+
+<option value="ingenieria">
+Ingeniería Civil
+</option>
+
+<option value="empresariales">
+Ciencias Empresariales
+</option>
+
+<option value="sociales">
+Ciencias Sociales
+</option>
+
+<option value="agropecuarias">
+Ciencias Agropecuarias
+</option>
+
+</select>
+
 </div>
 
 <div class="mb-3">
-<label class="form-label">Semestre</label>
-<input type="number" name="semestre" class="form-control" required>
+
+<label class="form-label">
+
+Carrera
+
+</label>
+
+<select name="carrera"
+        id="carrera"
+        class="form-select"
+        required>
+
+<option value="">
+Seleccione una carrera
+</option>
+
+</select>
+
+</div>
+
+<div class="mb-3">
+<select name="semestre"
+        class="form-select"
+        required>
+
+<option value="">
+Seleccione un semestre
+</option>
+
+<option value="1">1° Semestre</option>
+<option value="2">2° Semestre</option>
+<option value="3">3° Semestre</option>
+<option value="4">4° Semestre</option>
+<option value="5">5° Semestre</option>
+<option value="6">6° Semestre</option>
+<option value="7">7° Semestre</option>
+<option value="8">8° Semestre</option>
+<option value="9">9° Semestre</option>
+<option value="10">10° Semestre</option>
+
+</select>
 </div>
 
 <div class="mb-3">

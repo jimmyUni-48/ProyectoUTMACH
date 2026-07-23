@@ -53,12 +53,31 @@ required>
 
 <div class="mb-3">
 
-<label>Categoría</label>
+<select name="categoria"
+        class="form-select"
+        required>
 
-<input type="text"
-name="categoria"
-class="form-control"
-required>
+<option value="">
+Seleccione una categoría
+</option>
+
+<option value="Académica">
+Académica
+</option>
+
+<option value="Evento">
+Evento
+</option>
+
+<option value="Aviso">
+Aviso
+</option>
+
+<option value="Problema Universitario">
+Problema Universitario
+</option>
+
+</select>
 
 </div>
 
