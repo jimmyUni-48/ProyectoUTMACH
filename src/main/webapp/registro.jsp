@@ -153,11 +153,7 @@ Ciencias Agropecuarias
 
 <div class="mb-3">
 
-<label class="form-label">
-
-Carrera
-
-</label>
+<br><br>
 
 <select name="carrera"
         id="carrera"
