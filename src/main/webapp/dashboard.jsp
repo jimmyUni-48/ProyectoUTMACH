@@ -4,78 +4,140 @@
     Author     : karla
 --%>
 
-<%@page contentType="text/html"
-pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.utmach.modelo.Usuario"%>
 
-<%@page import=
-"com.utmach.modelo.Usuario"%>
-
-<%Usuario usuario =(Usuario)session.getAttribute("usuario");
+<%
+Usuario usuario = (Usuario)session.getAttribute("usuario");
 
 if(usuario == null){
-
-    response.sendRedirect(
-    "login.jsp");
-
+    response.sendRedirect("login.jsp");
     return;
 }
 %>
 
 <!DOCTYPE html>
-
 <html>
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<title>Dashboard</title>
+<meta charset="UTF-8">
+
+<title>Panel del Estudiante</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<style>
+
+body{
+background:#f4f6f9;
+}
+
+.card-opcion{
+transition:0.3s;
+border:none;
+border-radius:15px;
+}
+
+.card-opcion:hover{
+transform:translateY(-5px);
+}
+
+</style>
 
 </head>
 
 <body>
 
+<nav class="navbar navbar-dark bg-primary">
+<div class="container-fluid">
+
+<span class="navbar-brand">
+🎓 Conecta UTMACH
+</span>
+
+<a href="LogoutServlet"
+class="btn btn-danger">
+Cerrar Sesión
+</a>
+
+</div>
+</nav>
+
 <div class="container mt-5">
 
-    <h1 class="text-primary">
-        Bienvenido <%= usuario.getNombre() %>
-    </h1>
+<div class="text-center mb-4">
 
-    <p>
-        Carrera:
-        <strong>
-            <%= usuario.getCarrera() %>
-        </strong>
-    </p>
+<h2>
+Bienvenido,
+<%= usuario.getNombre() %>
+</h2>
 
-    <p>
-        Semestre:
-        <strong>
-            <%= usuario.getSemestre() %>
-        </strong>
-    </p>
+<p>
+<%= usuario.getCarrera() %> -
+Semestre <%= usuario.getSemestre() %>
+</p>
 
-    <hr>
+</div>
 
-    <a href="crearPublicacion.jsp"
-       class="btn btn-success">
+<div class="row">
 
-       Crear Publicación
+<div class="col-md-6 mb-4">
 
-    </a>
+<div class="card card-opcion shadow">
 
-    <a href="publicaciones.jsp"
-       class="btn btn-primary">
+<div class="card-body text-center">
 
-       Ver Publicaciones
+<h3>📝</h3>
 
-    </a>
+<h4>Crear Publicación</h4>
 
-    <a href="LogoutServlet"
-       class="btn btn-danger">
+<p>
+Crear avisos académicos para la comunidad.
+</p>
 
-       Cerrar Sesión
+<a href="crearPublicacion.jsp"
+class="btn btn-success">
 
-    </a>
+Ingresar
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-md-6 mb-4">
+
+<div class="card card-opcion shadow">
+
+<div class="card-body text-center">
+
+<h3>📢</h3>
+
+<h4>Ver Publicaciones</h4>
+
+<p>
+Consultar publicaciones existentes.
+</p>
+
+<a href="publicaciones.jsp"
+class="btn btn-primary">
+
+Ingresar
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 

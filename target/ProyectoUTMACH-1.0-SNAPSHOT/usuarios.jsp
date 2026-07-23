@@ -33,9 +33,15 @@ rel="stylesheet">
 
 <div class="container mt-4">
 
-<h1>Usuarios Registrados</h1>
+<h1>? Administración de Usuarios</h1>
 
-<table class="table table-striped">
+<div class="alert alert-info">
+
+Desde aquí puede suspender o activar cuentas.
+
+</div>
+
+<table class="table table-bordered table-hover shadow">
 
 <tr>
 
@@ -105,10 +111,12 @@ if(u.getEstado().equals("ACTIVA")){
 
 </table>
 <br><br>
-<button type="button"
-            onclick="window.location.href='dashboardAdmin.jsp'">
-        Volver al Inicio
-    </button>
+<a href="dashboardAdmin.jsp"
+class="btn btn-secondary">
+
+Volver al Panel
+
+</a>
 </div>
 
 </body>

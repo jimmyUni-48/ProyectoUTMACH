@@ -3,54 +3,96 @@
     Created on : 22 jul 2026, 11:52:12 p. m.
     Author     : karla
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
+
 <html>
 
 <head>
 
 <meta charset="UTF-8">
 
-<title>Login Administrador</title>
+<title>Administrador</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<style>
+
+body{
+background: linear-gradient(135deg,#dc3545,#fd7e14);
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.card-admin{
+max-width:500px;
+width:100%;
+border-radius:20px;
+box-shadow:0px 10px 25px rgba(0,0,0,.2);
+}
+
+</style>
 
 </head>
 
 <body>
 
-<h1>Ingreso Administrador</h1>
+<div class="card card-admin">
+
+<div class="card-body p-4">
+
+<h2 class="text-center mb-4">
+🛡️ Administrador
+</h2>
 
 <form action="LoginAdminServlet"
-      method="post">
+method="post">
 
-    <label>Correo</label>
+<div class="mb-3">
 
-    <input type="email"
-           name="correo">
+<label>Correo</label>
 
-    <br><br>
+<input type="email"
+name="correo"
+class="form-control"
+required>
 
-    <label>Contraseña</label>
+</div>
 
-    <input type="password"
-           name="clave">
+<div class="mb-3">
 
-    <br><br>
+<label>Contraseña</label>
 
-    <button type="submit">
+<input type="password"
+name="clave"
+class="form-control"
+required>
 
-        Ingresar
+</div>
 
-    </button>
-    
-    <br><br>
+<div class="d-grid gap-2">
 
-    <button type="button"
-            onclick="window.location.href='index.jsp'">
-        Volver al Inicio
-    </button>
+<button class="btn btn-danger">
+Ingresar
+</button>
+
+<button type="button"
+class="btn btn-secondary"
+onclick="window.location.href='index.jsp'">
+Volver
+</button>
+
+</div>
 
 </form>
+
+</div>
+
+</div>
 
 </body>
 

@@ -3,82 +3,99 @@
     Created on : 22 jul 2026, 8:29:20 p. m.
     Author     : karla
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-
 <html>
-
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <title>Registro de Usuario</title>
+<title>Registro - Conecta UTMACH</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<style>
+
+body{
+    background: linear-gradient(135deg,#0d6efd,#0dcaf0);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card-registro{
+    width:100%;
+    max-width:600px;
+    border-radius:20px;
+    box-shadow:0px 10px 25px rgba(0,0,0,0.2);
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <h1>Registro de Usuario</h1>
+<div class="card card-registro">
 
-    <form action="UsuarioServlet"
-          method="post">
+<div class="card-body p-4">
 
-        <label>Nombre:</label>
+<h2 class="text-center mb-4">
+🎓 Registro de Estudiante
+</h2>
 
-        <input type="text"
-               name="nombre" required>
+<form action="UsuarioServlet" method="post">
 
-        <br><br>
+<div class="mb-3">
+<label class="form-label">Nombre Completo</label>
+<input type="text" name="nombre" class="form-control" required>
+</div>
 
-        <label>Carrera:</label>
+<div class="mb-3">
+<label class="form-label">Carrera</label>
+<input type="text" name="carrera" class="form-control" required>
+</div>
 
-        <input type="text"
-               name="carrera" required>
+<div class="mb-3">
+<label class="form-label">Semestre</label>
+<input type="number" name="semestre" class="form-control" required>
+</div>
 
-        <br><br>
+<div class="mb-3">
+<label class="form-label">Correo Institucional</label>
+<input type="email" name="correo" class="form-control" required>
+<div class="form-text">
+Solo se permiten correos @utmachala.edu.ec
+</div>
+</div>
 
-        <label>Semestre:</label>
+<div class="mb-3">
+<label class="form-label">Contraseña</label>
+<input type="password" name="clave" class="form-control" required>
+</div>
 
-        <input type="number"
-               name="semestre"required>
+<div class="d-grid gap-2">
 
-        <br><br>
+<button type="submit"
+class="btn btn-success">
+Registrarse
+</button>
 
-        <label>Correo:</label>
+<button type="button"
+class="btn btn-secondary"
+onclick="window.location.href='index.jsp'">
+Volver al Inicio
+</button>
 
-        <input type="email"
-               name="correo" required>
-        
-        <br><br>
-        
-        <label>Unicamente con el dominio "@utmachala.edu.ec"</label>
-        
-        <br><br>
-        
-        <label>Contraseña</label>
+</div>
 
-        <input type="password" name="clave" required>
-        
-        <br><br>
+</form>
 
-        <button type="submit">
+</div>
 
-            Registrar
-
-        </button>
-        
-        <br><br>
-
-
-        <button type="button"
-                onclick="window.location.href='index.jsp'">
-            Volver al Inicio
-        </button>
-
-    </form>
+</div>
 
 </body>
-
 </html>

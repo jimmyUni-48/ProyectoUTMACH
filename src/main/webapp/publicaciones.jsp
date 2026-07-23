@@ -35,6 +35,8 @@ if(buscar != null &&
 <html>
 
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
 
 <meta charset="UTF-8">
 
@@ -42,72 +44,99 @@ if(buscar != null &&
 
 </head>
 
-<body>
-    <div class="container mt-4">
+<body class="bg-light">
 
-    <h1>Publicaciones</h1>
-    
-    <form method="get" action="publicaciones.jsp">
+<div class="container mt-4">
 
-        <input type="text"
-               name="buscar"
-               placeholder="Buscar publicación">
+<div class="card shadow">
 
-        <button type="submit">
-            Buscar
-        </button>
+<div class="card-header bg-primary text-white">
 
-    </form>
+<h2>
+? Publicaciones
+</h2>
 
-<br>
-    <table border="1">
-        <tr>
+</div>
 
-        <th>ID</th>
-        <th>Autor</th>
-        <th>Categoria</th>
-        <th>Titulo</th>
-        <th>Descripcion</th>
-        <th>Fecha</th>
-        <th>Estado</th>
+<div class="card-body">
 
-        </tr>
+<form method="get"
+action="publicaciones.jsp"
+class="row g-2 mb-3">
 
-        <%
-        for(Publicacion p : lista){
-        %>
+<div class="col-md-10">
 
-        <tr>
+<input type="text"
+name="buscar"
+class="form-control"
+placeholder="Buscar publicación">
 
-        <td><%= p.getId() %></td>
+</div>
 
-        <td><%= p.getAutor() %></td>
+<div class="col-md-2">
 
-        <td><%= p.getCategoria() %></td>
+<button class="btn btn-primary w-100">
 
-        <td><%= p.getTitulo() %></td>
+Buscar
 
-        <td><%= p.getDescripcion() %></td>
+</button>
 
-        <td><%= p.getFechaPublicacion() %></td>
+</div>
 
-        <td><%= p.getEstado() %></td>
+</form>
 
-        </tr>
+<div class="table-responsive">
 
-    <%
-    }
-    %>
+<table class="table table-striped table-hover">
 
-    </table>
-    
-    <button type="button" onclick="window.location.href='dashboard.jsp'">
-        
-            Volver al Inicio
-            
-    </button>
-    
-    </div>
+<tr>
+
+<th>ID</th>
+<th>Autor</th>
+<th>Categoría</th>
+<th>Título</th>
+<th>Descripción</th>
+<th>Fecha</th>
+<th>Estado</th>
+
+</tr>
+
+<%
+for(Publicacion p : lista){
+%>
+
+<tr>
+
+<td><%= p.getId() %></td>
+<td><%= p.getAutor() %></td>
+<td><%= p.getCategoria() %></td>
+<td><%= p.getTitulo() %></td>
+<td><%= p.getDescripcion() %></td>
+<td><%= p.getFechaPublicacion() %></td>
+<td><%= p.getEstado() %></td>
+
+</tr>
+
+<%
+}
+%>
+
+</table>
+
+</div>
+
+<a href="dashboard.jsp"
+class="btn btn-secondary">
+
+Volver
+
+</a>
+
+</div>
+
+</div>
+
+</div>
 
 </body>
 

@@ -11,75 +11,99 @@
 <html>
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<title>Crear Publicación</title>
+<meta charset="UTF-8">
+
+<title>Nueva Publicación</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
 
 </head>
 
-<body>
+<body class="bg-light">
 
-<div class="container mt-4">
+<div class="container mt-5">
 
-    <h1>Nueva Publicación</h1>
+<div class="card shadow">
 
-    <form action="PublicacionServlet"
-          method="post">
+<div class="card-header bg-success text-white">
 
-        <div class="mb-3">
+<h3>
+📝 Crear Publicación
+</h3>
 
-            <label>Título</label>
+</div>
 
-            <input type="text"
-                   name="titulo"
-                   class="form-control">
+<div class="card-body">
 
-        </div>
+<form action="PublicacionServlet"
+method="post">
 
-        <div class="mb-3">
+<div class="mb-3">
 
-            <label>Categoría</label>
+<label>Título</label>
 
-            <input type="text"
-                   name="categoria"
-                   class="form-control">
+<input type="text"
+name="titulo"
+class="form-control"
+required>
 
-        </div>
+</div>
 
-        <div class="mb-3">
+<div class="mb-3">
 
-            <label>Descripción</label>
+<label>Categoría</label>
 
-            <textarea
-                    name="descripcion"
-                    class="form-control">
-            </textarea>
+<input type="text"
+name="categoria"
+class="form-control"
+required>
 
-        </div>
+</div>
 
-        <div class="mb-3">
+<div class="mb-3">
 
-            <label>Fecha de vencimiento</label>
+<label>Descripción</label>
 
-            <input type="date"
-                   name="fechaVencimiento"
-                   class="form-control">
+<textarea
+name="descripcion"
+class="form-control"
+rows="5"
+required>
+</textarea>
 
-        </div>
+</div>
 
-        <button
-                class="btn btn-success">
+<div class="mb-3">
 
-            Publicar
+<label>Fecha de Vencimiento</label>
 
-        </button>
-        
-        <button type="button" onclick="window.location.href='dashboard.jsp'">
-            
-            Cancelar
-            
-        </button>
-    </form>
+<input type="date"
+name="fechaVencimiento"
+class="form-control"
+required>
+
+</div>
+
+<button class="btn btn-success">
+
+Publicar
+
+</button>
+
+<a href="dashboard.jsp"
+class="btn btn-secondary">
+
+Cancelar
+
+</a>
+
+</form>
+
+</div>
+
+</div>
 
 </div>
 
