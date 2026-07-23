@@ -1,0 +1,15 @@
+com\utmach\controlador\EliminarPublicacionServlet.class
+com\mycompany\proyectoutmach\resources\JakartaEE11Resource.class
+com\utmach\controlador\ActivarUsuarioServlet.class
+com\utmach\modelo\Usuario.class
+com\mycompany\proyectoutmach\JakartaRestConfiguration.class
+com\utmach\dao\PublicacionDAO.class
+com\utmach\controlador\UsuarioServlet.class
+com\utmach\controlador\LoginServlet.class
+com\utmach\controlador\LogoutServlet.class
+com\utmach\conexion\Conexion.class
+com\utmach\controlador\LoginAdminServlet.class
+com\utmach\dao\UsuarioDAO.class
+com\utmach\controlador\SuspenderUsuarioServlet.class
+com\utmach\modelo\Publicacion.class
+com\utmach\controlador\PublicacionServlet.class
