@@ -9,15 +9,6 @@ import java.sql.DriverManager;
 
 public class Conexion {
 
-    private static final String URL =
-            "jdbc:mysql://localhost:3306/utmach";
-
-    private static final String USER =
-            "root";
-
-    private static final String PASSWORD =
-            "";
-
     public Connection conectar() {
 
         Connection con = null;
@@ -28,14 +19,33 @@ public class Conexion {
                     "com.mysql.cj.jdbc.Driver"
             );
 
+            String host =
+                    System.getenv("MYSQLHOST");
+
+            String bd =
+                    System.getenv("MYSQLDATABASE");
+
+            String usuario =
+                    System.getenv("MYSQLUSER");
+
+            String clave =
+                    System.getenv("MYSQLPASSWORD");
+
+            String url =
+                    "jdbc:mysql://" +
+                    host +
+                    ":3306/" +
+                    bd +
+                    "?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
+
             con = DriverManager.getConnection(
-                    URL,
-                    USER,
-                    PASSWORD
+                    url,
+                    usuario,
+                    clave
             );
 
             System.out.println(
-                    "Conexion exitosa"
+                    "Conexion exitosa a Railway"
             );
 
         } catch (Exception e) {
@@ -48,12 +58,4 @@ public class Conexion {
 
         return con;
     }
-    
-    public static void main(String[] args) {
-
-    Conexion c = new Conexion();
-
-    c.conectar();
-
-}
 }
