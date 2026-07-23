@@ -4,8 +4,6 @@
     Author     : karla
 --%>
 
-<%@page import="com.utmach.dao.UsuarioDAO"%>
-<%@page import="com.utmach.dao.PublicacionDAO"%>
 <%@page import="com.utmach.modelo.Usuario"%>
 
 <%
@@ -21,24 +19,6 @@ if(!usuarioSesion.getRol().equals("ADMIN")){
     response.sendRedirect("dashboard.jsp");
     return;
 }
-
-UsuarioDAO usuarioDAO =
-        new UsuarioDAO();
-
-PublicacionDAO publicacionDAO =
-        new PublicacionDAO();
-
-int totalUsuarios =
-        usuarioDAO.totalUsuarios();
-
-int activos =
-        usuarioDAO.usuariosActivos();
-
-int suspendidos =
-        usuarioDAO.usuariosSuspendidos();
-
-int publicaciones =
-        publicacionDAO.totalPublicaciones();
 %>
 
 <!DOCTYPE html>
@@ -49,7 +29,7 @@ int publicaciones =
 
 <meta charset="UTF-8">
 
-<title>Dashboard Administrador</title>
+<title>Panel Administrativo</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
 rel="stylesheet">
@@ -60,19 +40,14 @@ body{
     background:#f4f6f9;
 }
 
-.card-estadistica{
+.card-opcion{
     border:none;
-    border-radius:15px;
+    border-radius:20px;
     transition:0.3s;
 }
 
-.card-estadistica:hover{
+.card-opcion:hover{
     transform:translateY(-5px);
-}
-
-.numero{
-    font-size:40px;
-    font-weight:bold;
 }
 
 </style>
@@ -104,136 +79,52 @@ Cerrar Sesión
 
 <div class="container mt-5">
 
-<h1 class="text-center mb-5">
+<div class="text-center mb-5">
 
-Dashboard Administrativo
+<h1>
+
+Bienvenido Administrador
 
 </h1>
 
-<div class="row g-4">
+<p class="text-muted">
 
-<div class="col-md-3">
+Seleccione una opción para continuar
 
-<div class="card card-estadistica shadow">
-
-<div class="card-body text-center">
-
-<div class="numero text-primary">
-
-<%= totalUsuarios %>
+</p>
 
 </div>
 
-<h5>
+<div class="row justify-content-center">
 
-Usuarios Registrados
+<div class="col-md-5 mb-4">
 
-</h5>
+<div class="card card-opcion shadow">
 
-</div>
+<div class="card-body text-center p-5">
 
-</div>
+<h1>
 
-</div>
+?
 
-<div class="col-md-3">
-
-<div class="card card-estadistica shadow">
-
-<div class="card-body text-center">
-
-<div class="numero text-success">
-
-<%= activos %>
-
-</div>
-
-<h5>
-
-Usuarios Activos
-
-</h5>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="card card-estadistica shadow">
-
-<div class="card-body text-center">
-
-<div class="numero text-warning">
-
-<%= suspendidos %>
-
-</div>
-
-<h5>
-
-Usuarios Suspendidos
-
-</h5>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="col-md-3">
-
-<div class="card card-estadistica shadow">
-
-<div class="card-body text-center">
-
-<div class="numero text-info">
-
-<%= publicaciones %>
-
-</div>
-
-<h5>
-
-Publicaciones
-
-</h5>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="row mt-5">
-
-<div class="col-md-6 mb-3">
-
-<div class="card shadow">
-
-<div class="card-body text-center">
+</h1>
 
 <h3>
 
-? Gestión de Usuarios
+Gestión de Usuarios
 
 </h3>
 
 <p>
 
-Administrar cuentas, activar o suspender estudiantes.
+Activar, suspender y administrar cuentas de estudiantes.
 
 </p>
 
 <a href="usuarios.jsp"
    class="btn btn-primary">
 
-Administrar Usuarios
+Ingresar
 
 </a>
 
@@ -243,28 +134,34 @@ Administrar Usuarios
 
 </div>
 
-<div class="col-md-6 mb-3">
+<div class="col-md-5 mb-4">
 
-<div class="card shadow">
+<div class="card card-opcion shadow">
 
-<div class="card-body text-center">
+<div class="card-body text-center p-5">
+
+<h1>
+
+?
+
+</h1>
 
 <h3>
 
-? Estadísticas
+Estadísticas
 
 </h3>
 
 <p>
 
-Visualización general de la actividad del sistema.
+Consultar estadísticas generales del sistema.
 
 </p>
 
 <a href="estadisticas.jsp"
-class="btn btn-info">
+   class="btn btn-success">
 
-Ver Estadísticas
+Ingresar
 
 </a>
 
